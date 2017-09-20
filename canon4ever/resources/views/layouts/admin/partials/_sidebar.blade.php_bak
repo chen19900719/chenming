@@ -1,0 +1,302 @@
+<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+        <ul class="am-list admin-sidebar-list">
+
+            <li>
+                <a href="/" class="{{ $_index or '' }}"><span class="am-icon-home"></span> 首页</a>
+            </li>
+
+            <!-- 商城管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-shop'}">
+                    <span class="am-icon-shopping-cart"></span>
+                    商城管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_shop or '' }}" id="collapse-shop">
+                    <li>
+                        <a href="/shop" class="{{ $_shop_dashboard or '' }}"><span class="am-icon-dashboard"></span> 仪表盘</a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('product.index')}}" class="{{ $_product or '' }}">
+                            <span class="am-icon-th-list"></span> 商品列表
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Shop\Product::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('product_category.index')}}" class="{{ $_product_category or '' }}">
+                            <span class="am-icon-th"></span> 商品分类
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Shop\Category::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('brand.index') }}" class="{{ $_brand or '' }}">
+                            <span class="am-icon-apple"></span> 商品品牌
+                            <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\Shop\Brand::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('order.index') }}" class="{{ $_order or '' }}">
+                            <span class="am-icon-list-alt"></span> 订单管理
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Shop\Order::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('customer.index') }}" class="{{ $_customer or '' }}">
+                            <span class="am-icon-user"></span> 会员管理
+                            <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\Shop\Customer::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('express.index') }}" class="{{ $_express or '' }}">
+                            <span class="am-icon-plane"></span> 快递运费
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Shop\Express::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/shop/product/trash" class="{{ $_product_trash or '' }}">
+                            <span class="am-icon-trash-o"></span> 商品回收站
+                            <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">{{ \App\Models\Shop\Product::onlyTrashed()->count() }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 商城管理 end-->
+
+
+            <!-- 官网管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-cms'}">
+                    <span class="am-icon-home"></span>
+                    官网管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_cms or '' }}" id="collapse-cms">
+                    <li>
+                        <a href="{{route('article.index')}}" class="{{ $_article or '' }}">
+                            <span class="am-icon-list"></span> 文章列表
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Cms\Article::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('article.create')}}" class="{{ $_new_article or '' }}">
+                            <span class="am-icon-plus"></span> 添加新文章
+                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('article_category.index')}}" class="{{ $_article_category or '' }}">
+                            <span class="am-icon-columns"></span> 栏目管理
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Cms\ArticleCategory::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('link.index')}}" class="{{ $_link or '' }}">
+                            <span class="am-icon-link"></span> 友情链接
+                            <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\Cms\Link::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/cms/article/trash" class="{{ $_article_trash or '' }}">
+                            <span class="am-icon-trash-o"></span> 文章回收站
+                            <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">{{ \App\Models\Cms\Article::onlyTrashed()->count() }}</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- 官网管理 end-->
+
+            <!-- 课程管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-casts'}">
+                    <span class="am-icon-book"></span>
+                    课程管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_casts or '' }}" id="collapse-casts">
+                    <li>
+                        <a href="{{route('episode.index')}}" class="{{ $_episode or '' }}">
+                            <span class="am-icon-list"></span> 课程列表
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Casts\Episode::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('episode.create')}}" class="{{ $_new_episode or '' }}">
+                            <span class="am-icon-plus"></span> 添加新课程
+                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('skill.index')}}" class="{{ $_skill or '' }}">
+                            <span class="am-icon-edge"></span> 技能管理
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Casts\Skill::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('series.index')}}" class="{{ $_series or '' }}">
+                            <span class="am-icon-columns"></span> 系列管理
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Casts\Series::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/casts/episode/trash" class="{{ $_episode_trash or '' }}">
+                            <span class="am-icon-trash-o"></span> 课程回收站
+                            <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">{{ \App\Models\Casts\Episode::onlyTrashed()->count() }}</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- 课程管理 end-->
+
+            <!-- 学生管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-crm'}">
+                    <span class="am-icon-users"></span>
+                    学生管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_crm or '' }}" id="collapse-crm">
+                    <li>
+                        <a href="/crm" class="{{ $_crm_dashboard or '' }}"><span class="am-icon-dashboard"></span>
+                            仪表盘</a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('client.index')}}" class="{{ $_client or '' }}">
+                            <span class="am-icon-list"></span> 学生列表
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Crm\Client::count() }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('client.create')}}" class="{{ $_new_client or '' }}">
+                            <span class="am-icon-plus"></span> 新学生注册
+                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 学生管理 end-->
+
+            <!-- 微信管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-wechat'}">
+                    <span class="am-icon-wechat"></span>
+                    微信管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_wechat or '' }}" id="collapse-wechat">
+                    <li>
+                        <a href="/wechat/menu" class="am-cf {{ $_menu or '' }}">
+                            <span class="am-icon-list-ol"></span> 微信自定义菜单
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 微信管理 end-->
+
+            <!-- 广告中心 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-ad'}">
+                    <span class="am-icon-google"></span>
+                    广告中心 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_ads or '' }}" id="collapse-ad">
+                    <li>
+                        <a href="{{route('ad.index')}}" class="{{ $_ad or '' }}">
+                            <span class="am-icon-picture-o"></span> 广告列表
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\Ad\Ad::count() }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('ad.create')}}" class="{{ $_new_ad or '' }}">
+                            <span class="am-icon-plus"></span> 添加新广告
+                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('ad_category.index')}}" class="{{ $_ad_category or '' }}">
+                            <span class="am-icon-tv"></span>
+                            广告分类
+                            <span class="am-badge am-badge-warning am-margin-right am-fr am-radius">{{ \App\Models\Ad\AdCategory::count() }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ads/ad/trash" class="{{ $_ad_trash or '' }}">
+                            <span class="am-icon-trash-o"></span> 广告回收站
+                            <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">{{ \App\Models\Ad\ad::onlyTrashed()->count() }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 广告管理 end-->
+
+            <!-- 系统管理 start-->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-system'}">
+                    <span class="am-icon-gear am-icon-spin"></span>
+                    系统管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub {{ $_system or '' }}" id="collapse-system">
+                    <li>
+                        <a href="/log-viewer">
+                            <span class="am-icon-refresh am-icon-server"></span> 日志管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/system/edit" class="{{ $_site_info or '' }}">
+                            <span class="am-icon-desktop"></span>
+                            站点信息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/system/cache" class="{{ $_cache or '' }}">
+                            <span class="am-icon-refresh am-icon-spin"></span> 清除缓存
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.permission.index')}}" class="{{ $_permission or '' }}">
+                            <span class="am-icon-lock"></span> 菜单与权限
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.role.index')}}" class="{{ $_role or '' }}">
+                            <span class="am-icon-users"></span> 用户组管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.user.index')}}" class="{{ $_user or '' }}">
+                            <span class="am-icon-user"></span> 用户管理
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 系统管理 end-->
+        </ul>
+
+        <div class="am-panel am-panel-default admin-sidebar-panel">
+            <div class="am-panel-bd">
+                <p><span class="am-icon-bookmark"></span> 思考</p>
+                <p>{{$bibel['cn']}}</p>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default admin-sidebar-panel">
+            <div class="am-panel-bd">
+                <p><span class="am-icon-tag"></span> Holy Bible</p>
+                <p>{{$bibel['en']}}</p>
+            </div>
+        </div>
+    </div>
+</div>

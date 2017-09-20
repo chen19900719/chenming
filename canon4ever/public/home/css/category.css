@@ -1,0 +1,52 @@
+@media only screen and (min-width: 1200px) {
+    .article-g-fixed {
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    .article-sidebar {
+        font-size: 1.4rem;
+    }
+}
+
+.article-main {
+    padding: 20px 0;
+}
+
+.article-title {
+    margin: 10px 0 20px 0;
+}
+
+.article-meta {
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+    color: #222;
+}
+
+.article-meta a {
+    color: #27ae60;
+}
+
+.article-pagination {
+    text-align: right;
+}
+
+.article-team li {
+    padding: 4px;
+}
+
+.article-team img {
+    margin-bottom: 0;
+}
+
+.article-content img,
+.article-team img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-footer {
+    padding: 10px 0;
+    text-align: center;
+}

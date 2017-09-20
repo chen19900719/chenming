@@ -1,0 +1,159 @@
+.am-container {
+    max-width: 1200px;
+}
+
+body {
+    /*font-size: 14px;*/
+    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+}
+
+pre.code {
+    font-family: Monaco, Consolas, Courier New, Courier, monospace, sans-serif;
+}
+
+a {
+    color: #222;
+}
+
+a:focus, a:hover {
+    color: #6f5499;
+}
+
+.am-slider-default .am-control-nav li a.am-active {
+    background-color: #563d7c;
+}
+
+.am-menu-default .am-menu-nav a {
+    color: #563d7c;
+}
+
+.my-footer {
+    border-top: 1px solid #eeeeee;
+    padding: 2em 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.am-tabs-d2 .am-tabs-nav > .am-active {
+    border-bottom: 2px solid #563d7c;
+}
+
+.am-tabs-d2 .am-tabs-nav > .am-active a {
+    color: #563d7c;
+}
+
+.am-tabs-d2 .am-tabs-nav > .am-active:after {
+    border-bottom-color: #563d7c;
+}
+
+.am-tabs-default .am-tabs-nav > .am-active a {
+    background-color: #6f5499;
+    background-image: -webkit-linear-gradient(top, #563d7c 0, #6f5499 100%);
+    background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+    background-repeat: repeat-x;
+}
+
+.am-tabs-default .am-tabs-nav {
+    background: none;
+}
+
+/* ==========================================================================
+   Component: Pagination
+ ============================================================================ */
+.pagination {
+    padding-left: 0;
+    margin: 1.5rem 0;
+    list-style: none;
+    color: #999999;
+    text-align: right;
+}
+
+.pagination:before,
+.pagination:after {
+    content: " ";
+    display: table;
+}
+
+.pagination:after {
+    clear: both;
+}
+
+.pagination > li {
+    display: inline-block;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    margin-right: 0;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    background-color: #eeeeee;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #0e90d2;
+    border-color: #0e90d2;
+    cursor: default;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #999999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .pagination-prev {
+    float: left;
+}
+
+.pagination .pagination-prev a {
+    border-radius: 0;
+}
+
+.pagination .pagination-next {
+    float: right;
+}
+
+.pagination .pagination-next a {
+    border-radius: 0;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+
+.pagination-right {
+    text-align: right;
+}
